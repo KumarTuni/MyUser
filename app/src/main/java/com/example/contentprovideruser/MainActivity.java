@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 	TextView resultView=null;		
     CursorLoader cursorLoader;
+    static String data;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,6 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
 
 	@Override
 	public void onLoadFinished(Loader<Cursor> arg0, Cursor cursor) {
-        String data;
 		StringToXML stringToXML = new StringToXML();
 		cursor.moveToFirst();
 		StringBuilder res=new StringBuilder();
@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
             cursor.moveToNext();
         }
 
-        resultView.setText(res);
+        resultView.setText(data);
 	}
 
 	@Override
