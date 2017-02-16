@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="f92b9b41f234b7904e9e58c549fb8c1e0e2a9e91">
+        sha1="6a813434bfb3151a0f1a3026784d8b3bf7bfe190">
         <dex dex="C:\Users\Rohin\Downloads\MyUser\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_60062be78cc1598412f07b3c60d407470bfb2ef1\classes.dex" />
     </item>
     <item
@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="6db8130a67937c9e759f5c35bdc73dc690cbb0d3">
+        sha1="8300f461785e24cd3ea83eccf33255cc9a8f399c">
         <dex dex="C:\Users\Rohin\Downloads\MyUser\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_6819d4936dd380cae5646588eedaa6a80b34d722\classes.dex" />
     </item>
     <item

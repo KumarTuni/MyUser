@@ -10,6 +10,7 @@ import android.support.v4.content.Loader;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 	TextView resultView=null;		
@@ -20,6 +21,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		resultView= (TextView) findViewById(R.id.res);
+		Toast.makeText(MainActivity.this, "UID: "+ getApplicationInfo(), Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
@@ -35,18 +37,24 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
 
 	@Override
 	public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
-		cursorLoader= new CursorLoader(this, Uri.parse("content://com.example.contentproviderexample.MyProvider/cte"), null, null, null, null);
+		cursorLoader= new CursorLoader(this, Uri.parse("content://com.example.aneTestSm.StringProvider/cte"), null, null, null, null);
 		return cursorLoader;
 	}
 
 	@Override
 	public void onLoadFinished(Loader<Cursor> arg0, Cursor cursor) {
+        String data;
+		StringToXML stringToXML = new StringToXML();
 		cursor.moveToFirst();
 		StringBuilder res=new StringBuilder();
         while (!cursor.isAfterLast()) {
+
         	res.append("\n"+cursor.getString(cursor.getColumnIndex("id"))+ "-"+ cursor.getString(cursor.getColumnIndex("name")));
+            data = cursor.getString(cursor.getColumnIndex("name"));
+            stringToXML.StringToXML(data);
             cursor.moveToNext();
         }
+
         resultView.setText(res);
 	}
 
